@@ -2,23 +2,17 @@ import React from 'react';
 import TimeFormatter from '../../utils/TimeFormatter';
 
 
-const OneDayForecast = ({d}) => {
+const OneDayForecast = ({d, country}) => {
   if(Object.keys(d).length === 0)
   return(<p></p>)
   
-const formatDate = (dateToFormat) => {
-  const date = Intl.DateTimeFormat('fi-FI', {weekday: 'long', month: 'long', day: 'numeric'}).format(new Date(dateToFormat))
-    return date
-}
-
 //Ota huomioon, että jos palautat tällä aikoja Suomesta, Virosta, Latviasta tai Liettuasta, pitää timezone vaihtaa
 const weatherIcon = d.weather.icon
 const weatherIconUrl = `https://www.weatherbit.io/static/img/icons/${weatherIcon}.png`
-
+const decimalFixer = (n) => n.toFixed(2)
 
 return(
-  <div>
-    <h4>{formatDate(d.valid_date)}</h4> 
+  <div className='card-list'>
     <img alt="" src={weatherIconUrl}/>
     <p>{d.weather.description}</p>
     
@@ -36,31 +30,31 @@ return(
       Sateen mahdollisuus: {d.pop}%
       </li>
       <li>
-      Sateen määrä: {d.precip}mm
+      Sateen määrä: {decimalFixer(d.precip)}mm
       </li>
       <li>
-      Tuuli: {d.wind_spd}m/s
+      Tuuli:  {decimalFixer(d.wind_spd)}m/s
       </li>
       <li>
       Puuskittainen tuuli: {d.wind_gust_spd}m/s
       </li>
       <li>
-      Suhteellinen kosteus: {d.rh}%
+      Suhteellinen kosteus: {decimalFixer(d.rh)}%
       </li>
       <li>
-      Näkyvyys: {d.vis}km
+      Näkyvyys: {decimalFixer(d.vis)}km
       </li>
       <li>
       Pilvisyys: {d.clouds}%
       </li>
       <li>
-      UV-indeksi: {d.uv}
+      UV-indeksi: {decimalFixer(d.uv)}
       </li>
       <li>
-      Aurinko nousee: {<TimeFormatter  timeToFormat={d.sunrise_ts}/>}
+      Aurinko nousee: {<TimeFormatter  timeToFormat={d.sunrise_ts} country={country}/>}
       </li>
       <li>
-      Aurinko laskee: {<TimeFormatter  timeToFormat={d.sunset_ts}/>}
+      Aurinko laskee: {<TimeFormatter  timeToFormat={d.sunset_ts}country={country}/>}
       </li>
     </ul>
 

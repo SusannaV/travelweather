@@ -1,18 +1,133 @@
 .App {
   text-align: center;
   list-style: inside;
+  font-family: Tahoma, Verdana, sans-serif;
+  background-color: rgb(242, 242, 242);
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(84, 134, 135);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(9px + 2vmin);
+  color: rgb(242, 242, 242);
+}
+
+button {
+  font-size: 1.5rem;
+  background-color: rgb(48, 108, 115);
+  color: rgb(242, 242, 242);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  margin: 5px 5px;
+}
+
+button:hover{
+  background-color: rgb(242, 242, 242);
+  color: rgb(61, 58, 86);
+}
+
+.today-card{
+  width: 300px;
+  border-radius: 8px;
+  background-color: rgb(233, 243, 239);
+  color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(48, 108, 115);
+  padding: 15px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.one-day-card{
+  width: 300px;
+  border-radius: 8px;
+  background-color: rgb(233, 243, 239);
+  color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(48, 108, 115);
+  padding: 20px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.card-list {
+  padding: 5px;
+  display: inline-block;
+  list-style-position: inside;
+  font-size: calc(16px + 6 * ((100vw - 60px) / 680));
+}
+
+ul {
+  text-align: left; 
+}
+
+.one-day{
+  display: grid;
+  grid-gap: 10px;
+  grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+  padding: 20px
+}
+
+.date-card{
+  background-color: rgb(84, 134, 135);
+  border-radius: 8px;
+}
+
+
+.weather-header {
+  padding: 1em;
+  color: rgb(48, 108, 115);
+}
+
+.date-header{
+  padding: 10px 0 5px 0;
+  margin: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card-location  {
+  font-size: calc(16px + 6 * ((100vw) / 680));
+}
+
+.buttons {
+  padding: 20px;
+}
+
+th {
+  background-color: rgb(48, 108, 115);
+  color: white;
+  text-align: left;
+  padding: 10px;
+  line-height: 20px;
+}
+.overflow-x{
+  overflow-x:auto;
+}
+
+td{
+  padding: 3px;
+  background-color: rgb(240, 250, 245);
+  font-size: 0.9rem;
+}
+
+tr{
+  background-color: rgb(240, 250, 245);
+  line-height: 10px;
+}
+
+.hourly-icon{
+    width:100%;
+    max-width:30px;
+}
+
+.hourly-header{
+  padding: 1em;
+  color: rgb(48, 108, 115);
 }

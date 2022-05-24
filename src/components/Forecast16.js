@@ -8,6 +8,7 @@ const Forecast16 = () => {
 
   return (
     <div>
+      <h1 className='weather-header'>16 Day Forecast</h1>
     {upcomingTravelDays.map(d => 
       <SixteenDayFilter travelDay={d} key={d.date}/>
     )}

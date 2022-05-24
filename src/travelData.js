@@ -1,6 +1,6 @@
 const travelData = [
   {
-    "date" : "2022-05-23",
+    "date" : "2022-05-24",
     "from" : "Oulu",
     "fromCountry" : "Finland"
   },

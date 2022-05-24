@@ -6,46 +6,48 @@ const HourlyForecast = ({d}) => {
   const weatherIcon = d.weather.icon
   const weatherIconUrl = `https://www.weatherbit.io/static/img/icons/${weatherIcon}.png`
   
-  
+  const decimalFixer = (n) => n.toFixed(2)
+
+
   return(
     <tr>
-      <th>
-      {<TimeFormatter timeToFormat={d.ts}/>}
-      </th>
-      <th>
-      <img alt="" src={weatherIconUrl}/>
+      <td>
+      <b>{<TimeFormatter timeToFormat={d.ts}/>}</b>
+      </td>
+      <td>
+      <img className='hourly-icon' alt="" src={weatherIconUrl}/>
       <p>{d.weather.description}</p>
-      </th>
-      <th>
+      </td>
+      <td>
       {d.temp}
-      </th>
-      <th>
+      </td>
+      <td>
       {d.app_temp}
-      </th>
-      <th>
+      </td>
+      <td>
       {d.pop}%
-      </th>
-      <th>
-      {d.precip}mm
-      </th>
-      <th>
-      {d.wind_spd}m/s
-      </th>
-      <th>
+      </td>
+      <td>
+      {decimalFixer(d.precip)}mm
+      </td>
+      <td>
+      {decimalFixer(d.wind_spd)}m/s
+      </td>
+      <td>
       {d.wind_gust_spd}m/s
-      </th>
-      <th>
-      {d.rh}%
-      </th>
-      <th>
-      {d.vis}km
-      </th>
-      <th>
+      </td>
+      <td>
+      {decimalFixer(d.rh)}%
+      </td>
+      <td>
+      {decimalFixer(d.vis)}km
+      </td>
+      <td>
       {d.clouds}%
-      </th>
-      <th>
+      </td>
+      <td>
       {d.uv}
-      </th>
+      </td>
     </tr>
 
     // <div>

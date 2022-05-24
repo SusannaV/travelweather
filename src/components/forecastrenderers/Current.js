@@ -12,7 +12,7 @@ const Current = ({d}) => {
     
     
     return(
-      <div>
+      <div className='card-list'>
         <img alt="" src={weatherIconUrl}/>
         <p>{d.weather.description}</p>
         
@@ -24,7 +24,7 @@ const Current = ({d}) => {
           Tuntuu kuin: {d.app_temp}
           </li>
           <li>
-          Sateen määrä: {d.precip}mm
+          Sateen määrä: {decimalFixer(d.precip)}mm
           </li>
           <li>
           Tuuli: {decimalFixer(d.wind_spd)}m/s
@@ -33,7 +33,7 @@ const Current = ({d}) => {
           Suhteellinen kosteus: {decimalFixer(d.rh)}%
           </li>
           <li>
-          Näkyvyys: {d.vis}km
+          Näkyvyys: {decimalFixer(d.vis)}km
           </li>
           <li>
           Pilvisyys: {d.clouds}%

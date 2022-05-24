@@ -7,7 +7,17 @@ const fromCountry = travelDay.fromCountry
 
 
 if (!travelDay.hasOwnProperty("stop")){
-  return  <TodayModule city={fromCity} country={fromCountry}/>
+  return  (
+    <div>
+      <h1 className='weather-header'>Weather today</h1>
+      <div className='date-card'>  
+      <TodayModule city={fromCity} country={fromCountry}/>
+      </div>
+    </div>
+    
+
+  )
+  
 } else {
   const stopCity = travelDay.stop
   const stopCountry = travelDay.stopCountry
@@ -16,9 +26,12 @@ if (!travelDay.hasOwnProperty("stop")){
 
   return(
     <div>
+      <h1 className='weather-header'>Weather today</h1>
+      <div className='date-card'>  
       <TodayModule city={fromCity} country={fromCountry}/>
       <TodayModule city={stopCity} country={stopCountry}/>
       <TodayModule city={toCity} country={toCountry}/>
+      </div>
     </div>
   )
 }

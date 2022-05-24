@@ -26,8 +26,8 @@ const HourlyModule = ({city, country}) => {
     });
 
     return(
-      <>
-        <h3>Hourly forecast for {city}, {country}</h3>
+      <div className='overflow-x'>
+        <h3 className='hourly-header'>Hourly forecast for {city}, {country}</h3>
         <table>
         <tbody>
           <tr>
@@ -38,13 +38,13 @@ const HourlyModule = ({city, country}) => {
               Sää
             </th>
             <th>
-              Lämpötila
+              Lämpö- tila
             </th>
             <th>
             Tuntuu kuin
             </th>
             <th>
-              Sateen mahdollisuus
+              Sateen mahd.
             </th>
             <th>
               Sateen määrä
@@ -53,16 +53,16 @@ const HourlyModule = ({city, country}) => {
             Tuuli
             </th>
             <th>
-            Puuskittainen tuuli
+            Puusk. tuuli
             </th>
             <th>
-            Suhteellinen kosteus
+            Suht. kosteus
             </th>
             <th>
-            Näkyvyys
+            Näky- vyys
             </th>
             <th>
-            Pilvisyys
+            Pilvi- syys
             </th>
             <th>
             UV-indeksi
@@ -72,33 +72,11 @@ const HourlyModule = ({city, country}) => {
         {filteredHours.map(d => <HourlyForecast d={d} key={d.ts}/>)}
         </tbody>
         </table>
-      </>
+      </div>
     )
   } else {
     return(<div></div>)
   }
-    
-
-    //     <li>
-    //     Tuuli: {d.wind_spd}m/s
-    //     </li>
-    //     <li>
-    //     Puuskittainen tuuli: {d.wind_gust_spd}m/s
-    //     </li>
-    //     <li>
-    //     Suhteellinen kosteus: {d.rh}%
-    //     </li>
-    //     <li>
-    //     Näkyvyys: {d.vis}km
-    //     </li>
-    //     <li>
-    //     Pilvisyys: {d.clouds}%
-    //     </li>
-    //     <li>
-    //     UV-indeksi: {d.uv}
-    //     </li>
-    //   </ul>
-
 }
 
 export default HourlyModule;

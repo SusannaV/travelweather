@@ -1,3 +1,4 @@
+import './App.css';
 
 import travelData from './travelData';
 import Forecast16 from './components/Forecast16';
@@ -41,12 +42,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 class="text-3xl font-bold underline">Matkasää</h1>
+        <h1>Matkasää</h1>
         <p>Täältä löydät säätiedot kaikista niistä paikoista, joissa tullaan käymään</p>
       </header>
+      <div className='buttons'>
       <button onClick={() => handleHourlyClick({travelDay})}>Show me hourly weather</button>
       <button onClick={() => handle16Click()}>Show me 16 day forecast</button>
       <button onClick={() => handleTodayClick()}>Show me todays weather</button>
+      </div>
       <div>
       {showToday === true && <WeatherToday travelDay={travelDay}/>}
       {show16 === true && <Forecast16 travelDayIndex={travelDayIndex}/>}

@@ -20,7 +20,7 @@ const TodayModule = ({city, country}) => {
   if (loaded){
 
     return(
-      <div>
+      <div className='today-card'>
         <h3>Current weather in {city}, {country}</h3>
         {weather.data.map(d => <Current d={d} key={d.ts}/>)}
       </div>

@@ -25,13 +25,14 @@ useEffect(() => {
       setLoaded(true)
     })
 }, [])
-
+console.log('weather', weather)
 if (loaded){
   const filteredDays = weather.data.filter(d => d.valid_date === date)
+  console.log('filtered', filteredDays)
   return(
-    <div>
-      <h3>Weather in {city}, {country}</h3>
-      {filteredDays.map(d => <OneDayForecast d={d} key={d.valid_date}/>)}
+    <div className='today-card'>
+      <h3 className='card-location'>Weather in {city}, {country}</h3>
+      {filteredDays.map(d => <OneDayForecast d={d} key={d.valid_date} country={country}/>)}
     </div>
   )
 } else {
